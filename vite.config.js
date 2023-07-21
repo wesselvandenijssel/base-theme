@@ -5,7 +5,7 @@ import globImporter from "node-sass-glob-importer";
 import FullReload from "vite-plugin-full-reload";
 import fs from "fs";
 
-const wordpressHost = "http://theme.local/";
+const wordpressHost = "https://theme.wesselvandenijssel.nl/";
 
 const dest = "./dist";
 const entries = [
