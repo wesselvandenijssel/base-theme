@@ -5,7 +5,7 @@ flynt-component[name="BlockHero"] {
     height: 0;
     width: 0;
     border-style: solid;
-    border-width: 50px 0 0 50vw;
+    border-width: 100px 0 0 50vw;
     border-color: transparent transparent transparent #ffffff;
     position: absolute;
     left: 0;
@@ -15,7 +15,7 @@ flynt-component[name="BlockHero"] {
     content: "";
     height: 0;
     width: 0;
-    border-width: 0 0 50px 50vw;
+    border-width: 0 0 100px 50vw;
     position: absolute;
     border-style: solid;
     right: 0;
