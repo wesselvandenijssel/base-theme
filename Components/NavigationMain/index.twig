@@ -5,6 +5,9 @@
       {% if menu %}
         {% include 'Partials/_menu.twig' with { 'items': menu.items } only %}
       {% endif %}
+      {% if contact %}
+        {% include 'Partials/_contact.twig' with { 'items': contact.items } only %}
+      {% endif %}
     </div>
   </nav>
 </flynt-component>

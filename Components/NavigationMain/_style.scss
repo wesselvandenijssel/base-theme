@@ -1,4 +1,4 @@
-flynt-component[name='NavigationMain'] {
+flynt-component[name="NavigationMain"] {
   --navigation-height: 96px;
   block-size: var(--navigation-height);
   display: none;
@@ -27,6 +27,7 @@ flynt-component[name='NavigationMain'] {
     padding-block: 24px;
   }
 
-  @import 'Partials/logo';
-  @import 'Partials/menu';
+  @import "Partials/logo";
+  @import "Partials/menu";
+  @import "Partials/contact";
 }

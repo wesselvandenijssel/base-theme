@@ -27,7 +27,7 @@
 }
 
 [data-theme="blue"] {
-  --color-background: #358cff;
+  --color-background: linear-gradient(#358cff, #71b2ff);
   --color-text: #ffffff;
   --color-border: hsla(212, 100%, 15%, 0.7);
   --color-border-secondary: var(--color-border);
