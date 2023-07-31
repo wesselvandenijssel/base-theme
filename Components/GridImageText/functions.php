@@ -4,8 +4,7 @@ namespace Flynt\Components\GridImageText;
 
 use Flynt\FieldVariables;
 
-function getACFLayout()
-{
+function getACFLayout() {
     return [
         'name' => 'gridImageText',
         'label' => __('Grid: Image Text', 'flynt'),
@@ -61,6 +60,28 @@ function getACFLayout()
                         'required' => 1,
                         'wrapper' => [
                             'width' => 60
+                        ],
+                    ],
+
+                    [
+                        'label' => __('Subitems', 'flynt'),
+                        'name' => 'subitems',
+                        'type' => 'repeater',
+                        'collapsed' => '',
+                        'layout' => 'block',
+                        'button_label' => __('Add subitem', 'flynt'),
+                        'sub_fields' => [
+                            [
+                                'label' => __('Text', 'flynt'),
+                                'name' => 'contentHtml',
+                                'type' => 'wysiwyg',
+                                'delay' => 0,
+                                'media_upload' => 0,
+                                'required' => 1,
+                                'wrapper' => [
+                                    'width' => 60
+                                ],
+                            ],
                         ],
                     ],
                 ]
