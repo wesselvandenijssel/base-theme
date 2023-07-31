@@ -21,5 +21,46 @@ flynt-component[name='NavigationFooter'] {
     }
   }
 
+  .connect-items {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 25vh;
+    left: 50px;
+    align-items: flex-start;
+    color: white;
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.6);
+
+    @media (max-width: $breakpoint-desktop) {
+      bottom: 5vh;
+      left: 20px;
+      top: unset;
+    }
+
+    .connect {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+
+      &::after {
+        margin: 20px 0 20px;
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 100px;
+        border: 1px solid
+      }
+
+      &::before {
+        margin-bottom: 20px;
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 20px;
+        border: 1px solid
+      }
+    }
+  }
+
   @import 'Partials/menu';
 }
