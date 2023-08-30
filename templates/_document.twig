@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" type="application/rss+xml" title="{{- theme.labels.feed|replace({ '%s': site.title }) -}}" href="{{ site.rss2|e('esc_url') }}">
     {{ function('wp_head') }}
+    <link href="{{function('get_template_directory_uri')}}/assets/fontawesome/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     {{ function('wp_body_open') }}

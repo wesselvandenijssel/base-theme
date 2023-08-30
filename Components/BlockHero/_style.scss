@@ -1,5 +1,6 @@
 flynt-component[name="BlockHero"] {
   overflow: hidden;
+
   &::before {
     content: "";
     height: 0;
@@ -23,6 +24,11 @@ flynt-component[name="BlockHero"] {
     bottom: 0;
     border-color: transparent transparent #ffffff transparent;
   }
+
+  figure img {
+    border-radius: 92px;
+  }
+
   @media (min-width: $breakpoint-tablet-horizontal) {
     .container {
       align-items: center;
@@ -31,7 +37,7 @@ flynt-component[name="BlockHero"] {
       justify-content: space-around;
       padding-bottom: 150px;
 
-      > * {
+      >* {
         flex-basis: 50%;
         margin-block-start: 0;
       }
@@ -46,12 +52,14 @@ flynt-component[name="BlockHero"] {
 
       figure {
         position: relative;
+
         img {
           position: relative;
           z-index: 5;
           border-radius: 100vw;
           background-color: white;
         }
+
         &:before {
           content: "";
           position: absolute;
@@ -63,6 +71,7 @@ flynt-component[name="BlockHero"] {
           right: 0;
           top: -50%;
         }
+
         &::after {
           width: 110%;
           position: absolute;
