@@ -28,7 +28,7 @@
     &::after,
     &--primary,
     &--secondary {
-      background-color: var(--color-text);
+      background-color: #ffffff;
       block-size: var(--line-border-width);
       border-radius: 6px;
       display: block;
@@ -57,6 +57,7 @@
 
 &[data-status='menuIsOpen'] {
   .hamburger-lines {
+
     &::before,
     &::after {
       opacity: 0;

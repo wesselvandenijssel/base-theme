@@ -14,9 +14,9 @@ flynt-component[name='NavigationBurger'] {
 
   .container {
     align-items: center;
-    background-color: var(--color-background);
+    background-color: #358cff;
     block-size: var(--navigation-height);
-    border-block-end: solid 2px var(--color-border);
+    box-shadow: 0 4px 2px 0 #358cff;
     display: flex;
     inline-size: 100%;
     inset-block-start: 0;
@@ -38,6 +38,7 @@ flynt-component[name='NavigationBurger'] {
 
 // Overwriting wp defaults to keep admin bar fixed
 @media screen and (max-width: 600px) {
+
   // stylelint-disable-next-line selector-max-id
   #wpadminbar {
     position: fixed;

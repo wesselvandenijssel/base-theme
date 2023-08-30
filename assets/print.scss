@@ -1,4 +1,5 @@
 @media print {
+
   *,
   *::before,
   *::after {
@@ -21,7 +22,7 @@
   }
 
   [href]::after {
-    content: '('attr(href)')';
+    content: '(' attr(href)')';
     display: inline;
   }
 
@@ -30,8 +31,9 @@
     max-inline-size: 100%;
   }
 
-  abbr[title]::after { /* stylelint-disable-line selector-no-qualifying-type */
-    content: '('attr(title)')';
+  abbr[title]::after {
+    /* stylelint-disable-line selector-no-qualifying-type */
+    content: '(' attr(title)')';
   }
 
   /**
