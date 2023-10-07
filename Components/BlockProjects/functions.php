@@ -6,13 +6,6 @@ use Timber\Timber;
 use Flynt\FieldVariables;
 
 add_filter('Flynt/addComponentData?name=BlockProjects', function ($data) {
-    // $args = [
-    //     'post_type'   => 'projects',
-    //     'order'       => 'ASC',
-    //     'orderby'     => 'title',
-    // ];
-
-    // $data['posts'] = Timber::get_posts($args);
 
     $args = [
         'post_type'   => 'projects',

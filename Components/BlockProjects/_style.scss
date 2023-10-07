@@ -11,7 +11,7 @@ flynt-component[name="BlockProjects"] {
 			position: initial;
 			margin-top: 1.9em;
 
-			@include bp('mobile') {
+			@media (min-width: $breakpoint-mobile-horizontal) {
 				margin-top: 0.8em;
 				margin-bottom: 4.5em;
 			}
@@ -31,7 +31,7 @@ flynt-component[name="BlockProjects"] {
 			width: 265px;
 			height: 290px !important;
 
-			@include bp("narrow") {
+			@media (min-width: $breakpoint-tablet) {
 				width: 590px;
 				height: 640px !important; //overrule .entry-content img
 				object-fit: cover;
@@ -43,14 +43,14 @@ flynt-component[name="BlockProjects"] {
 			justify-content: space-between;
 			margin-bottom: 1.07em;
 
-			@include bp('mobile') {
+			@media (min-width: $breakpoint-mobile-horizontal) {
 				flex-direction: column;
 				gap: 24px;
 			}
 		}
 
 		.swiper-slide {
-			@include bp('mobile') {
+			@media (min-width: $breakpoint-mobile-horizontal) {
 				width: 265px !important;
 			}
 		}
@@ -65,7 +65,7 @@ flynt-component[name="BlockProjects"] {
 			gap: 8px;
 			margin-top: .8em;
 
-			@include bp('mobile') {
+			@media (min-width: $breakpoint-mobile-horizontal) {
 				position: absolute;
 				bottom: 60px;
 				margin: 0;
@@ -73,15 +73,15 @@ flynt-component[name="BlockProjects"] {
 
 			.swiper-button-prev {
 				&::after {
-					content: $fa-angle-left;
-					font-family: $fa;
+					content: "\f104";
+					font-family: 'FontAwesome';
 				}
 			}
 
 			.swiper-button-next {
 				&::after {
-					content: $fa-angle-right;
-					font-family: $fa;
+					content: "\f105";
+					font-family: 'FontAwesome';
 				}
 			}
 
@@ -94,7 +94,7 @@ flynt-component[name="BlockProjects"] {
 				position: initial;
 				padding: 15px;
 				border-radius: 100vw;
-				background-color: $primary-color-1;
+				background-color: red;
 				width: 40px;
 				height: 40px;
 				margin-top: unset;
@@ -105,7 +105,7 @@ flynt-component[name="BlockProjects"] {
 				}
 
 				&:hover {
-					background-color: rgba($primary-color-1, .7);
+					background-color: rgba(red, .7);
 				}
 			}
 		}

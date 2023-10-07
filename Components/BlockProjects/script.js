@@ -1,46 +1,44 @@
-jQuery(document).ready(function ($) {
-  (function ($) {
-    /***************************
+export default function (el) {
+  /***************************
 	Swiper
 	***************************/
 
-    var swiperSelector = $(".swiper-container");
+  var swiperSelectors = document.querySelectorAll(".swiper-container");
 
-    swiperSelector.each(function (index) {
-      $(this).addClass("swiper-slider-" + index);
+  swiperSelectors.forEach(function (swiperSelector, index) {
+    swiperSelector.classList.add("swiper-slider-" + index);
 
-      var dragSize = 270;
+    var dragSize = 270;
 
-      if ($(window).width() < 700) {
-        dragSize = 80;
-      } else if ($(window).width() < 940) {
-        dragSize = 200;
-      }
+    if (window.innerWidth < 700) {
+      dragSize = 80;
+    } else if (window.innerWidth < 940) {
+      dragSize = 200;
+    }
 
-      var swiper = new Swiper(".swiper-slider-" + index, {
-        freeMode: true,
-        spaceBetween: 20,
-        slidesPerView: 1,
+    var swiper = new Swiper(".swiper-slider-" + index, {
+      freeMode: true,
+      spaceBetween: 20,
+      slidesPerView: 1,
 
-        breakpoints: {
-          700: {
-            slidesPerView: 1.5,
-          },
-          940: {
-            slidesPerView: 2.2,
-          },
+      breakpoints: {
+        700: {
+          slidesPerView: 1.5,
         },
+        940: {
+          slidesPerView: 2.2,
+        },
+      },
 
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        scrollbar: {
-          el: ".swiper-scrollbar",
-          draggable: true,
-          dragSize: dragSize,
-        },
-      });
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+        dragSize: dragSize,
+      },
     });
   });
-});
+}
