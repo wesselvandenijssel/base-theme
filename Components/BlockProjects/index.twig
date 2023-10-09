@@ -1,31 +1,35 @@
 <flynt-component name="BlockProjects" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
-  <div class="container">
-    <div class="content" data-size="{{ options.size }}" data-align="{{ options.align }}" data-text-align="{{ options.textAlign }}">
-      {{ contentHtml|e('wp_kses_post') }}
-    </div>
+	<div class="container">
 
-<div class="images-slider__top">
-			<div class="images-slider__buttons">
-
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
+		<div class="wrapper">
+			<div class="content" data-size="{{ options.size }}" data-align="{{ options.align }}" data-text-align="{{ options.textAlign }}">
+				{{ contentHtml|e('wp_kses_post') }}
 			</div>
-		</div>
 
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
+			<div class="images-slider">
+				<div class="images-slider__buttons">
 
-{% for project in projects %}
-
-				<div class="swiper-slide">
-						{{project.image }}
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
 				</div>
-{% endfor %}
+
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+
+						{% for project in projects %}
+
+							<div class="swiper-slide">
+								{{project.image }}
+							</div>
+						{% endfor %}
+
+					</div>
+
+					<div class="swiper-scrollbar"></div>
+				</div>
 
 			</div>
 
-			<div class="swiper-scrollbar"></div>
 		</div>
-
-  </div>
+	</div>
 </flynt-component>

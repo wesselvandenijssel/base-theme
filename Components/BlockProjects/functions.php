@@ -22,7 +22,7 @@ add_filter('Flynt/addComponentData?name=BlockProjects', function ($data) {
             $found_projects[] = [
                 'title' => $post->post_title,
                 'permalink' => get_the_permalink($id),
-                'image' => wp_get_attachment_image(get_post_thumbnail_id($id)),
+                'image' => wp_get_attachment_image(get_post_thumbnail_id($id), 'full', false),
             ];
         }
     }

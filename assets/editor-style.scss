@@ -1,7 +1,6 @@
-@import
-  'styles/variables',
-  'styles/fonts',
-  'styles/base';
+@import 'styles/variables',
+'styles/fonts',
+'styles/base';
 
 /**
  * Classic editor styles
@@ -16,7 +15,7 @@
   *,
   *::before,
   *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 }
 

@@ -17,7 +17,6 @@ export default function (el) {
     }
 
     var swiper = new Swiper(".swiper-slider-" + index, {
-      freeMode: true,
       spaceBetween: 20,
       slidesPerView: 1,
 
@@ -26,7 +25,7 @@ export default function (el) {
           slidesPerView: 1.5,
         },
         940: {
-          slidesPerView: 2.2,
+          slidesPerView: 3,
         },
       },
 

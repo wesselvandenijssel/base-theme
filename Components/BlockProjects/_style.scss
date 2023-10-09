@@ -2,7 +2,29 @@ flynt-component[name="BlockProjects"] {
 
 	overflow: hidden;
 
+	.wrapper {
+		display: grid;
+
+		@media (min-width: $breakpoint-mobile-horizontal) {
+			grid-template-columns: 30% 70%;
+			gap: 24px;
+
+		}
+	}
+
+	.content {
+		min-width: 300px;
+	}
+
 	.images-slider {
+		justify-content: space-between;
+		margin-bottom: 1.07em;
+		width: 100%;
+
+		@media (min-width: $breakpoint-mobile-horizontal) {
+			flex-direction: column;
+			gap: 24px;
+		}
 
 		.swiper-scrollbar {
 			background: #ffffff;
@@ -15,6 +37,10 @@ flynt-component[name="BlockProjects"] {
 				margin-top: 0.8em;
 				margin-bottom: 4.5em;
 			}
+		}
+
+		.swiper-container {
+			clip-path: polygon(0 0, 0 calc(100%), -24px calc(100%), -24px calc(100% + 24px), calc(100vw + 24px) calc(100% + 24px), calc(100vw + 24px) 0);
 		}
 
 		&__title {
@@ -38,20 +64,15 @@ flynt-component[name="BlockProjects"] {
 			}
 		}
 
-		&__top {
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: 1.07em;
-
-			@media (min-width: $breakpoint-mobile-horizontal) {
-				flex-direction: column;
-				gap: 24px;
-			}
-		}
-
 		.swiper-slide {
-			@media (min-width: $breakpoint-mobile-horizontal) {
-				width: 265px !important;
+			background-color: #ede5ff;
+			height: auto;
+
+			img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+				max-height: 300px;
 			}
 		}
 
@@ -63,13 +84,8 @@ flynt-component[name="BlockProjects"] {
 			position: relative;
 			display: flex;
 			gap: 8px;
-			margin-top: .8em;
-
-			@media (min-width: $breakpoint-mobile-horizontal) {
-				position: absolute;
-				bottom: 60px;
-				margin: 0;
-			}
+			margin-block-end: .8em;
+			justify-content: flex-end;
 
 			.swiper-button-prev {
 				&::after {
@@ -86,26 +102,28 @@ flynt-component[name="BlockProjects"] {
 			}
 
 			.swiper-button-disabled {
-				opacity: 1;
+				opacity: .8;
 			}
 
 			.swiper-button-next,
 			.swiper-button-prev {
+				box-sizing: border-box;
 				position: initial;
 				padding: 15px;
 				border-radius: 100vw;
-				background-color: red;
+				background-color: #71b2ff;
 				width: 40px;
 				height: 40px;
 				margin-top: unset;
+				transition: .3s background-color;
 
 				&::after {
 					font-size: 22px;
-					color: #000000;
+					color: #ffffff;
 				}
 
 				&:hover {
-					background-color: rgba(red, .7);
+					background-color: hsla(212, 100%, 15%, 1);
 				}
 			}
 		}
