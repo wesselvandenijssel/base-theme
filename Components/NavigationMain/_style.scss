@@ -20,6 +20,7 @@ flynt-component[name="NavigationMain"] {
   }
 
   .container {
+    box-sizing: border-box;
     block-size: 100%;
     display: flex;
     justify-content: space-between;
