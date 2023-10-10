@@ -25,7 +25,7 @@ export default function (el) {
           slidesPerView: 1.5,
         },
         940: {
-          slidesPerView: 3,
+          slidesPerView: 2.2,
         },
       },
 
