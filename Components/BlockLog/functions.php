@@ -10,14 +10,15 @@ add_filter('Flynt/addComponentData?name=BlockLog', function ($data) {
     $args = [
         'post_type' => 'log',
         'post_status' => 'publish',
-        'order'       => 'ASC',
-        'orderby'     => 'date',
+        'orderby'     => [
+            'date'   => 'DESC',
+        ],
         'posts_per_page' => -1,
-        // 'meta_query' => [
-        //     [
-        //         'key' => '_thumbnail_id'
-        //     ]
-        // ]
+        'meta_query' => [
+            [
+                'key' => '_thumbnail_id'
+            ]
+        ]
     ];
     $log =  Timber::get_posts($args);
 

@@ -1,43 +1,36 @@
 export default function (el) {
-  /***************************
-	Swiper
-	***************************/
+  function parseDMYDate(dateStr) {
+    const parts = dateStr.split("-");
+    if (parts.length !== 3) return null;
+    const day = parseInt(parts[0]);
+    const month = parseInt(parts[1]) - 1;
+    const year = 2000 + parseInt(parts[2]); // Assuming the year is in YY format
 
-  var swiperSelectors = document.querySelectorAll(".swiper-container");
+    return new Date(year, month, day);
+  }
 
-  swiperSelectors.forEach(function (swiperSelector, index) {
-    swiperSelector.classList.add("swiper-slider-" + index);
+  function formatDate(date) {
+    const day = ("0" + date.getDate()).slice(-2);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const year = date.getFullYear() % 100;
+    return `${day}-${month}-${year}`;
+  }
 
-    var dragSize = 270;
+  const datePicker = document.getElementById("datepicker");
 
-    if (window.innerWidth < 700) {
-      dragSize = 80;
-    } else if (window.innerWidth < 940) {
-      dragSize = 200;
-    }
+  datePicker.addEventListener("change", function () {
+    const selectedDate = new Date(this.value);
 
-    var swiper = new Swiper(".swiper-slider-" + index, {
-      spaceBetween: 20,
-      slidesPerView: 1,
+    const gridItems = document.querySelectorAll(".grid .item-card");
+    gridItems.forEach((item) => {
+      const itemDateStr = item.getAttribute("data-date");
+      const itemDate = parseDMYDate(itemDateStr);
 
-      breakpoints: {
-        700: {
-          slidesPerView: 1.5,
-        },
-        940: {
-          slidesPerView: 2.2,
-        },
-      },
-
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-        dragSize: dragSize,
-      },
+      if (itemDate && selectedDate && itemDate > selectedDate) {
+        item.style.display = "block"; // Or any other appropriate display property
+      } else {
+        item.style.display = "none"; // Or any other appropriate display property
+      }
     });
   });
 }

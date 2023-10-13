@@ -6,6 +6,11 @@
 				{{ contentHtml|e('wp_kses_post') }}
 			</div>
 
+			<div class="filter">
+				<label for="datepicker">Selecteer datum:</label>
+				<input type="date" id="datepicker">
+			</div>
+
 			<div class="grid">
 				{% for post in log %}
 					<a class="item-card" href={{post.permalink}} data-date={{post.date}}>

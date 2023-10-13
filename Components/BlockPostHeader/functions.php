@@ -47,7 +47,7 @@ Options::addTranslatable('BlockPostHeader', [
                 'name' => 'readingTime',
                 'type' => 'text',
                 // translators: %d: Placeholder for a number
-                'default_value' => __('%d min read', 'flynt'),
+                'default_value' => __('%d minuut leestijd', 'flynt'),
                 'wrapper' => [
                     'width' => '50',
                 ],
