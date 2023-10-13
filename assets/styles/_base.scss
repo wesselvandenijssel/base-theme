@@ -259,6 +259,7 @@ table {
  */
 
 .button,
+.btn,
 .wp-block-button>.wp-block-button__link {
   --button-background-color: var(--color-accent);
   --button-border-color: var(--color-accent);
@@ -300,6 +301,30 @@ table {
     --button-text-color: var(--color-accent);
     border: 0;
     padding: 0;
+  }
+
+  .btn-tertiary,
+  &--tertiary {
+    align-items: center;
+    border-radius: 100vw;
+    position: relative;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: "\f105";
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      font-family: 'FontAwesome';
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
   }
 }
 

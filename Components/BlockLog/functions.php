@@ -13,11 +13,11 @@ add_filter('Flynt/addComponentData?name=BlockLog', function ($data) {
         'order'       => 'ASC',
         'orderby'     => 'date',
         'posts_per_page' => -1,
-        'meta_query' => [
-            [
-                'key' => '_thumbnail_id'
-            ]
-        ]
+        // 'meta_query' => [
+        //     [
+        //         'key' => '_thumbnail_id'
+        //     ]
+        // ]
     ];
     $log =  Timber::get_posts($args);
 
@@ -29,7 +29,7 @@ add_filter('Flynt/addComponentData?name=BlockLog', function ($data) {
             $found_logs[] = [
                 'title' => $post->post_title,
                 'permalink' => get_the_permalink($id),
-                'date' => get_the_date($id),
+                'date' => get_the_date('d-m-y', $id),
                 'image' => wp_get_attachment_image(get_post_thumbnail_id($id), 'full', false, ['class' => 'item-card__image']),
             ];
         }
