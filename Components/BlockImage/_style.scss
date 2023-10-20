@@ -1,7 +1,7 @@
 flynt-component[name="BlockImage"] {
 
 	.figure {
-		[data-size="full"] {
+		&[data-size="full"] {
 			.figure-image {
 				width: 100%;
 			}
