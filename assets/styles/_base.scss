@@ -257,7 +257,6 @@ table {
 /**
  * Buttons
  */
-
 .button,
 .btn,
 .wp-block-button>.wp-block-button__link {
@@ -294,6 +293,13 @@ table {
   &--outlined {
     --button-text-color: var(--color-accent);
     --button-background-color: transparent;
+    transition: background-color .3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-accent);
+      --button-text-color: var(--color-background);
+    }
   }
 
   &--text {

@@ -37,6 +37,12 @@ flynt-component[name='NavigationFooter'] {
     text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.6);
     transition: .3s ease;
 
+    a {
+      i {
+        color: white;
+      }
+    }
+
     @media (max-width: $breakpoint-desktop) {
       bottom: 5vh;
       left: -70px;
