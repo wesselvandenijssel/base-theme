@@ -401,6 +401,10 @@ select {
     pointer-events: none;
   }
 
+  &:focus-visible {
+    outline-style: none;
+  }
+
   &:invalid {
     border-color: var(--color-error);
   }
