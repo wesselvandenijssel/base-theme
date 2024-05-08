@@ -1,119 +1,120 @@
 flynt-component[name="BlockLog"] {
 
-	.content {
-		min-width: 300px;
-		margin-bottom: 24px;
-	}
+  .content {
+    min-width: 300px;
+    margin-bottom: 24px;
+  }
 
-	.grid {
-		display: grid;
-		gap: 24px;
+  .grid {
+    display: grid;
+    gap: 24px;
 
-		@media (min-width: $breakpoint-mobile-horizontal) {
-			grid-template-columns: repeat(3, 1fr);
-			gap: 40px;
-		}
-	}
+    @media (min-width: $breakpoint-mobile-horizontal) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+  }
 
-	.filter {
-		margin-bottom: 24px;
-	}
+  .filter {
+    margin-bottom: 24px;
+  }
 
-	.item-card {
-		$item-card: &;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		position: relative;
-		box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-		border-radius: 20px;
-		text-decoration: none;
+  .item-card {
+    $item-card: &;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    text-decoration: none;
 
-		&:hover {
-			.item-card__title:after {
-				width: 100%;
-				left: 0;
-			}
-		}
+    &:hover {
+      .item-card__title:after {
+        width: 100%;
+        left: 0;
+      }
+    }
 
 
-		&--small {
-			& #{$item-card}__content {
-				align-items: flex-end;
-				height: 100%;
-			}
+    &--small {
+      & #{$item-card}__content {
+        align-items: flex-end;
+        height: 100%;
+      }
 
-			& #{$item-card}__wrapper {
-				height: 100%;
-			}
-		}
+      & #{$item-card}__wrapper {
+        height: 100%;
+      }
+    }
 
-		&--link {
-			cursor: pointer;
+    &--link {
+      cursor: pointer;
 
-			>* {
-				cursor: pointer;
-			}
-		}
+      >* {
+        cursor: pointer;
+      }
+    }
 
-		&__image {
-			border-radius: 20px 20px 0 0;
-			width: 100%;
-			height: 200px;
-			object-fit: cover;
+    &__image {
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: left;
 
-			@media (min-width: $breakpoint-mobile-horizontal) {
-				height: 360px;
-			}
+      @media (min-width: $breakpoint-mobile-horizontal) {
+        height: 360px;
+      }
 
-			&--small {
-				height: 220px;
-			}
-		}
+      &--small {
+        height: 220px;
+      }
+    }
 
-		&__title {
-			display: inline-block;
-			position: relative;
-			color: var(--color-text);
+    &__title {
+      display: inline-block;
+      position: relative;
+      color: var(--color-text);
 
-			&:after {
-				background: none repeat scroll 0 0 transparent;
-				bottom: 0;
-				content: "";
-				display: block;
-				height: 2px;
-				left: 50%;
-				position: absolute;
-				background: rgba(0, 0, 0, .5);
-				transition: width 0.3s ease 0s, left 0.3s ease 0s;
-				width: 0;
+      &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: rgba(0, 0, 0, .5);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
 
-			}
-		}
+      }
+    }
 
-		&__content {
-			display: flex;
-			align-items: flex-end;
-			justify-content: space-between;
-			background-color: #ffffff;
-			padding: 20px 20px 20px 30px;
-			border-radius: 0 0 20px 20px;
-			gap: 20px;
+    &__content {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      background-color: #ffffff;
+      padding: 20px 20px 20px 30px;
+      border-radius: 0 0 20px 20px;
+      gap: 20px;
 
-			@media (min-width: $breakpoint-tablet-horizontal) {
-				padding: 20px 25px 34px 30px;
-			}
-		}
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        padding: 20px 25px 34px 30px;
+      }
+    }
 
-		&__wrapper {
-			display: flex;
-			gap: 4px;
-			flex-direction: column;
+    &__wrapper {
+      display: flex;
+      gap: 4px;
+      flex-direction: column;
 
-			p {
-				margin-bottom: 0;
-			}
-		}
+      p {
+        margin-bottom: 0;
+      }
+    }
 
-	}
+  }
 }
