@@ -11,19 +11,9 @@
         >
       {% else %}
         <img class="figure-image lazyload"
-            src="{{ image.src|resizeDynamic(768) }}"
+            src="{{ image.src }}"
             width="{{ 768 }}"
             height="{{ (768 / image.aspect)|round }}"
-            srcset="{{ placeholderImage(768, (768 / image.aspect)|round, 'rgba(125, 125, 125, 0.1)') }}"
-            data-srcset="
-              {{ image.src|resizeDynamic(1920) }} 1920w,
-              {{ image.src|resizeDynamic(1600) }} 1600w,
-              {{ image.src|resizeDynamic(1440) }} 1440w,
-              {{ image.src|resizeDynamic(1366) }} 1366w,
-              {{ image.src|resizeDynamic(1024) }} 1024w,
-              {{ image.src|resizeDynamic(768) }} 768w,
-              {{ image.src|resizeDynamic(640) }} 640w"
-            data-sizes="auto"
             alt="{{ image.alt|e }}">
       {% endif %}
       {% if image.caption %}
