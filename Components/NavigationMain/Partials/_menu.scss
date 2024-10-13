@@ -5,16 +5,15 @@
   margin-inline-end: -1rem;
   padding-inline-start: 2rem;
 
-  .link {
-    color: var(--color-gray);
+  a.link {
+    color: var(--color-text);
     display: inline-block;
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
-    will-change: color;
 
     &:hover {
-      color: var(--color-accent);
+      color: var(--color-gray);
     }
   }
 
