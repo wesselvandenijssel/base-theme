@@ -97,6 +97,7 @@ flynt-component[name='NavigationFooter'] {
       writing-mode: vertical-rl;
       text-orientation: mixed;
       transform: rotate(180deg);
+      text-decoration: none;
 
       &::after {
         margin: 20px 0 20px;
@@ -117,7 +118,8 @@ flynt-component[name='NavigationFooter'] {
       }
 
       i {
-        transform: rotate(90deg)
+        transform: rotate(90deg);
+        margin-top: 10px
       }
     }
   }
