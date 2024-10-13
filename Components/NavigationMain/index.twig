@@ -1,13 +1,13 @@
 <flynt-component load:on="idle" load:on:media="(min-width: 1024px)" name="NavigationMain">
-  <nav class="navigation" data-theme="full-blue" aria-label="{{ labels.ariaLabel|e }}">
-    <div class="container">
-      {% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
-      {% if menu %}
-        {% include 'Partials/_menu.twig' with { 'items': menu.items } only %}
-      {% endif %}
-      {% if contact %}
-        {% include 'Partials/_contact.twig' with { 'items': contact.items } only %}
-      {% endif %}
-    </div>
-  </nav>
+	<nav class="navigation" data-theme="full-blue" aria-label="{{ labels.ariaLabel|e }}">
+		<div class="container">
+			{% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
+			{% if menu.items %}
+				{% include 'Partials/_menu.twig' with { 'items': menu.items } only %}
+			{% endif %}
+			{% if contact %}
+				{% include 'Partials/_contact.twig' with { 'items': contact.items } only %}
+			{% endif %}
+		</div>
+	</nav>
 </flynt-component>

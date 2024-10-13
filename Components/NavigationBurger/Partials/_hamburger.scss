@@ -5,9 +5,7 @@
   block-size: 48px;
   cursor: pointer;
   display: flex;
-  inline-size: 48px;
   justify-content: center;
-  margin-inline-end: -10px;
   position: relative;
 
   &:focus:not(:focus-visible) {
