@@ -13,27 +13,40 @@ add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
     $data['options']['maxColumns'] = 3;
     $postsPerPage = $data['options']['maxPosts'] ?? 3;
 
-    $posts = Timber::get_posts([
+    $args = [
         'post_status' => 'publish',
         'post_type' => POST_TYPE,
         'cat' => join(',', array_map(function ($taxonomy) {
             return $taxonomy->term_id;
         }, $data['taxonomies'])),
-        'posts_per_page' => $postsPerPage + 1,
         'ignore_sticky_posts' => 1,
-    ]);
+    ];
 
-    $data['posts'] = array_slice(array_filter($posts->to_array(), function ($post) {
-        return $post->ID !== get_the_ID();
-    }), 0, $postsPerPage);
+    if ($postsPerPage > 0) {
+        $args['posts_per_page'] = $postsPerPage;
+    }
+
+    $posts = Timber::get_posts($args);
+
+    if ($postsPerPage > 0) {
+        // Limit to $postsPerPage, excluding the current post
+        $data['posts'] = array_slice(array_filter($posts->to_array(), function ($post) {
+            return $post->ID !== get_the_ID();
+        }), 0, $postsPerPage);
+    } else {
+        // Return all posts, excluding the current post
+        $data['posts'] = array_filter($posts->to_array(), function ($post) {
+            return $post->ID !== get_the_ID();
+        });
+    }
+
 
     $data['postTypeArchiveLink'] = get_permalink(get_option('page_for_posts')) ?? get_post_type_archive_link(POST_TYPE);
 
     return $data;
 });
 
-function getACFLayout()
-{
+function getACFLayout() {
     return [
         'name' => 'gridPostsLatest',
         'label' => __('Grid: Posts Latest', 'flynt'),
@@ -87,7 +100,7 @@ function getACFLayout()
                         'name' => 'maxPosts',
                         'type' => 'number',
                         'default_value' => 3,
-                        'min' => 1,
+                        'min' => 0,
                         'step' => 1
                     ]
                 ]

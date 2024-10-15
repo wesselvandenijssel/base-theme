@@ -1,11 +1,11 @@
-<flynt-component name="BlockPostHeader">
-	<div class="container" data-size="full" data-theme="light">
+<flynt-component name="BlockPostHeader visuallyHidden">
+	<div class="container visuallyHidden" data-size="full" data-theme="light">
 		<div class="content" data-size="medium" data-align="center">
 			<h1>{{ post.title }}</h1>
 			{% if post.post_excerpt %}
 				<p class="h5">{{ post.post_excerpt }}</p>
 			{% endif %}
-			<p class="meta">
+			<p class="meta visuallyHidden">
 				<a class="author" href="https://www.wesselvandenijssel.nl/">
 					{% if post.author.avatar %}
 						<img class="avatar lazyload" src="{{ placeholderImage(48, 48) }}" data-src="{{ post.author.avatar|resizeDynamic(96) }}" width="48" height="48" alt="{{ post.author.name|e }}">

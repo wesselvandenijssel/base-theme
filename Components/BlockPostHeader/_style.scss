@@ -1,9 +1,9 @@
 flynt-component[name='BlockPostHeader'] {
-  > .container {
+  >.container {
     padding: var(--component-spacing) var(--container-spacing);
   }
 
-  .content * + * {
+  .content *+* {
     --flow-space: 2rem;
   }
 
@@ -12,7 +12,7 @@ flynt-component[name='BlockPostHeader'] {
     display: flex;
     flex-wrap: wrap;
 
-    > *:not(:last-child) {
+    >*:not(:last-child) {
       &::after {
         background-color: var(--color-accent);
         block-size: 2px;
@@ -51,4 +51,8 @@ flynt-component[name='BlockPostHeader'] {
   flynt-component[name='BlockImage'] {
     margin-block: calc(-1 * var(--component-spacing) / 2) calc(var(--component-spacing) / 2);
   }
+}
+
+.wp-block-post-content {
+  padding-top: 80px;
 }
