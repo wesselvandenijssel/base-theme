@@ -1,0 +1,7 @@
+<flynt-component name="BlockCode" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
+	<div class="container">
+		<div class="content" data-size="{{ options.size }}" data-align="{{ options.align }}" data-text-align="{{ options.textAlign }}">
+			{{ contentHtml | shortcodes }}
+		</div>
+	</div>
+</flynt-component>
