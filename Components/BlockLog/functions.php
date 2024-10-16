@@ -40,7 +40,8 @@ add_filter('Flynt/addComponentData?name=BlockLog', function ($data) {
     return $data;
 });
 
-function getACFLayout() {
+function getACFLayout()
+{
     return [
         'name' => 'BlockLog',
         'label' => __('Block: Log', 'flynt'),

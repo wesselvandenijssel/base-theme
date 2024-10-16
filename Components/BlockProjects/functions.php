@@ -31,7 +31,8 @@ add_filter('Flynt/addComponentData?name=BlockProjects', function ($data) {
     return $data;
 });
 
-function getACFLayout() {
+function getACFLayout()
+{
     return [
         'name' => 'blockProjects',
         'label' => __('Block: Projects', 'flynt'),

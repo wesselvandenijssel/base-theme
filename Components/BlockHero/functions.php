@@ -4,7 +4,8 @@ namespace Flynt\Components\BlockHero;
 
 use Flynt\FieldVariables;
 
-function getACFLayout() {
+function getACFLayout()
+{
     return [
         'name' => 'BlockHero',
         'label' => __('Block: Image Text', 'flynt'),

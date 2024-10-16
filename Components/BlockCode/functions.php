@@ -4,7 +4,8 @@ namespace Flynt\Components\BlockCode;
 
 use Flynt\FieldVariables;
 
-function getACFLayout() {
+function getACFLayout()
+{
     return [
         'name' => 'blockCode',
         'label' => __('Block: Code', 'flynt'),

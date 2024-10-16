@@ -46,7 +46,8 @@ add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
     return $data;
 });
 
-function getACFLayout() {
+function getACFLayout()
+{
     return [
         'name' => 'gridPostsLatest',
         'label' => __('Grid: Posts Latest', 'flynt'),

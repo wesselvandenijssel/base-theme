@@ -10,13 +10,15 @@ use Timber\Timber;
 /**
  * Responsible for initializing the theme.
  */
-class Init {
+class Init
+{
     /**
      * Initialize the theme.
      *
      * @return void
      */
-    public static function initTheme() {
+    public static function initTheme()
+    {
         Defaults::init();
         Options::init();
         Timber::init();
@@ -32,7 +34,8 @@ class Init {
      *
      * @return void
      */
-    public static function loadComponents() {
+    public static function loadComponents()
+    {
         $basePath = get_template_directory() . '/Components';
         Api::registerComponentsFromPath($basePath);
         do_action('Flynt/afterRegisterComponents');
@@ -43,7 +46,8 @@ class Init {
      *
      * @return boolean True if all required plugins are active.
      */
-    public static function checkRequiredPlugins() {
+    public static function checkRequiredPlugins()
+    {
         $acfActive = class_exists('acf');
 
         if (!$acfActive) {
@@ -70,7 +74,8 @@ class Init {
      *
      * @return void
      */
-    protected static function notifyAcfPluginIsMissing() {
+    protected static function notifyAcfPluginIsMissing()
+    {
         add_action('admin_notices', function () {
             $class = esc_attr('notice notice-error');
             $title = esc_html(__('Flynt is missing a required plugin', 'flynt'));
