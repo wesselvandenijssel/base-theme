@@ -40,8 +40,7 @@ add_filter('Flynt/addComponentData?name=BlockLog', function ($data) {
     return $data;
 });
 
-function getACFLayout()
-{
+function getACFLayout() {
     return [
         'name' => 'BlockLog',
         'label' => __('Block: Log', 'flynt'),
@@ -60,6 +59,13 @@ function getACFLayout()
                 'delay' => 0,
                 'media_upload' => 0,
                 'required' => 1,
+            ],
+            [
+                'label' => __('Filter tonen', 'flynt'),
+                'name' => 'show_filter',
+                'type' => 'true_false',
+                'ui' => true,
+                'default_value' => 1,
             ],
             [
                 'label' => __('Options', 'flynt'),

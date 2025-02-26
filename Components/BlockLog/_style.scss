@@ -16,6 +16,13 @@ flynt-component[name="BlockLog"] {
 
   .filter {
     margin-bottom: 24px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      flex-direction: column;
+    }
   }
 
   .item-card {

@@ -6,10 +6,19 @@
 				{{ contentHtml|e('wp_kses_post') }}
 			</div>
 
-			<div class="filter">
-				<label for="datepicker">Selecteer datum vanaf:</label>
-				<input type="date" id="datepicker">
-			</div>
+			{% if show_filter %}
+				<div class="filter">
+					<div class="filter__date">
+						<label for="datepicker">Selecteer datum vanaf:</label>
+						<input type="date" id="datepicker">
+					</div>
+
+					<div class="filter__search">
+						<label for="search">Zoek op titel:</label>
+						<input type="text" id="search">
+					</div>
+				</div>
+			{% endif %}
 
 			<div class="grid">
 				{% for post in log %}
