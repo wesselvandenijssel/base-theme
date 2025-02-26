@@ -1,4 +1,27 @@
 flynt-component[name='BlockImageText'] {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--column-gap);
+
+    img {
+      object-fit: cover;
+      clip-path: polygon(calc(0% + 110px) 0%, 100% 0%, 100% calc(100% - 110px), calc(100% - 110px) 100%, 0% 100%, 0% calc(0% + 110px));
+
+      &.small {
+        max-height: 200px;
+      }
+
+      &.medium {
+        max-height: 300px;
+      }
+
+      &.large {
+        max-height: 600px;
+      }
+    }
+  }
+
   @media (min-width: $breakpoint-tablet-horizontal) {
     .container {
       align-items: center;
@@ -6,7 +29,7 @@ flynt-component[name='BlockImageText'] {
       gap: var(--column-gap);
       justify-content: space-around;
 
-      > * {
+      >* {
         flex-basis: 50%;
         margin-block-start: 0;
       }
@@ -17,6 +40,39 @@ flynt-component[name='BlockImageText'] {
 
       &[data-image-position='right'] {
         flex-direction: row-reverse;
+      }
+    }
+  }
+
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--column-gap);
+
+
+      &[data-image-position='right'] {
+        flex-direction: column-reverse;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+
+        &.small {
+          max-height: 200px;
+        }
+
+        &.medium {
+          max-height: 300px;
+        }
+
+        &.large {
+          max-height: 600px;
+          max-width: 600px;
+          margin: 0 auto;
+        }
       }
     }
   }

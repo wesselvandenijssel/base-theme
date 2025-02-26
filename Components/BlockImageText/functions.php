@@ -4,8 +4,7 @@ namespace Flynt\Components\BlockImageText;
 
 use Flynt\FieldVariables;
 
-function getACFLayout()
-{
+function getACFLayout() {
     return [
         'name' => 'blockImageText',
         'label' => __('Block: Image Text', 'flynt'),
@@ -58,6 +57,18 @@ function getACFLayout()
                 'sub_fields' => [
                     FieldVariables\getTheme()
                 ]
+            ],
+
+            [
+                'label' => __('Hoogte van de afbeelding', 'flynt'),
+                'name' => 'imageHeight',
+                'type' => 'select',
+                'choices' => [
+                    'auto' => __('Auto', 'flynt'),
+                    'small' => __('Klein', 'flynt'),
+                    'medium' => __('Middel', 'flynt'),
+                    'large' => __('Groot', 'flynt'),
+                ],
             ]
         ]
     ];
